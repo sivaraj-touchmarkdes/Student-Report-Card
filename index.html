@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.2/tailwind.min.css">
+
+    <title>DOS - CLUB</title>
+
+    <style>
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <div class="hidden lg:block">
+
+        <!--Navbar : start-->
+        <nav class="p-4 bg-black text-gray-200">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center pl-8">
+                    <a href="./index.html"><img src="./src/assets/img/dos-logo.png"></a>
+                </div>
+
+                <!-- MOBILE NAV ICON -->
+                <div class="md:hidden block absolute top-4 right-8 fixed">
+                    <button aria-label="navigation" type="button"
+                        class="md:hidden text-gray-200 transition duration-300 focus:outline-none focus:text-white hover:text-white"><i
+                            class="fas fa-bars text-3xl" id="bars"></i> </button>
+                </div>
+
+                <!-- NAVIGATION - LARGE SCREENS -->
+                <div class="hidden md:flex">
+                    <ul class="hidden md:flex">
+                        <li class="pr-8"><a href="#"
+                                class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1692C8] via-[#00B457] to-[#00B457]">Profile</a>
+                        </li>
+                        <li class="pr-8"><a href="./badges.html"
+                                class="text-[#FFFFF] text-xl font-semibold hover:text-transparent bg-clip-text hover:bg-gradient-to-r hover:from-[#1692C8] hover:via-[#00B457] hover:to-[#00B457] transition duration-300">Badges</a>
+                        </li>
+                        <li class="pr-8"><a href="./event&workshop.html"
+                                class="text-[#FFFFF] text-xl font-semibold hover:text-transparent bg-clip-text hover:bg-gradient-to-r hover:from-[#1692C8] hover:via-[#00B457] hover:to-[#00B457] transition duration-300">Event
+                                & Workshop</a></li>
+                        <li class="pr-8"><a href="./certificate.html"
+                                class="text-[#FFFFF] text-xl font-semibold hover:text-transparent bg-clip-text hover:bg-gradient-to-r hover:from-[#1692C8] hover:via-[#00B457] hover:to-[#00B457] transition duration-300">Certificate</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MOBILE MENU -->
+            <div id="mobileMenu" class="hidden flex w-full mx-auto py-8 text-center">
+                <div class="flex flex-col justify-center items-center w-full space-y-2">
+                    <a href="#"
+                        class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1692C8] via-[#00B457] to-[#00B457] pt-5 lg:pt-0">Profile</a>
+                    <a href="./badges.html"
+                        class="block text-[#FFFFF] text-xl font-semibold hover:text-transparent bg-clip-text hover:bg-gradient-to-r hover:from-[#1692C8] hover:via-[#00B457] hover:to-[#00B457] transition duration-300 pt-5 lg:pt-0">Badges</a>
+                    <a href="./event&workshop.html"
+                        class="block text-[#FFFFF] text-xl font-semibold hover:text-transparent bg-clip-text hover:bg-gradient-to-r hover:from-[#1692C8] hover:via-[#00B457] hover:to-[#00B457] transition duration-300 pt-5 lg:pt-0">Event
+                        & Workshop</a>
+                    <a href="./certificate.html"
+                        class="block text-[#FFFFF] text-xl font-semibold hover:text-transparent bg-clip-text hover:bg-gradient-to-r hover:from-[#1692C8] hover:via-[#00B457] hover:to-[#00B457] transition duration-300 pt-5 lg:pt-0">Certificate</a>
+                </div>
+            </div>
+
+        </nav>
+        <!--Navbar : End-->
+
+
+        <!--Profile : start--->
+        <div class="mt-10">
+            <div>
+                <h1 class="text-black text-3xl font-bold flex justify-center items-center">
+                    Profile
+                </h1>
+            </div>
+
+            <div class="text-green-800 grid grid-cols-4 lg:grid-cols-12 gap-10 p-10 lg:p-20">
+                <div class="bg-[#043B78] rounded-3xl p-5 col-span-5 h-96 md:h-80">
+                    <div class="flex justify-start items-center">
+                        <div>
+                            <div class="relative w-40 h-40">
+                                <!-- Back image -->
+                                <img src="./src/assets/img/profile-bg.png" class="absolute top-0 left-0 w-full h-full"
+                                    alt="Back Image">
+                                <!-- Front image -->
+                                <img src="./src/assets/img/profile-dp.png"
+                                    class="absolute top-0 left-0 w-36 h-36 pt-3 pl-3" alt="Front Image">
+                                <!--right--pop-up-qr-code-->
+                                <img src="./src/assets/img/qr-code.png"
+                                    class="absolute right-0 bottom-0 w-16 h-16 pt-3 pl-3" alt="Popup Qr Image" id="popup-trigger">
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-white lg:ml-5 xl:ml-5 2xl:ml-14">
+                            <h1 class="font-bold lg:text-2xl xl:text-2xl">Sivaraj Saminathan</h1>
+                            <p class="lg:text-lg xl:text-base">B.Tech (Information Technology)</p>
+                            <p class="lg:text-lg xl:text-base">PERI Institute of Technology</p>
+                            <div class="flex space-x-3 pt-3">
+                                <img src="./src/assets/img/icons/linkedin.png">
+                                <img src="./src/assets/img/icons/github.png">
+                                <img src="./src/assets/img/icons/email.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div
+                            class="border border-1 border-t-[#ffffffda] border-b-[#9999994c] rounded-2xl p-4 mt-10 bg-gradient-to-b from-[#ffffff4b] via-[#ffffff4b] to-[#99999925] lg:mt-3 xl:mt-3">
+                            <!-- Progress -->
+                            <div class="flex justify-between items-center text-lg font-semibold text-white">
+                                <h1>Skills</h1>
+                                <h3 class="opacity-40">Progress</h3>
+                            </div>
+                            <!----->
+                            <div class="flex py-2">
+                                <div class="px-2">
+                                    <img src="./src/assets/img/progress-icon.png">
+                                </div>
+                                <div class="flex justify-between w-full h-6 bg-[#001F41] rounded-full overflow-hidden relative"
+                                    role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="flex flex-col justify-center rounded-full overflow-hidden bg-[#01B25D] text-xs text-white whitespace-nowrap transition duration-500"
+                                        style="width: 30%"></div>
+                                    <div class="absolute right-0 top-0 bottom-0 flex items-center pr-2">
+                                        <h2 class="text-white text-base font-normal">335 / 1000</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <!----->
+                            <!-- End Progress -->
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#EEEEEE] rounded-3xl p-5 col-span-3 h-96 md:h-80">
+
+                    <div>
+                        <h1 class="flex justify-center text-2xl md:text-xl font-semibold text-black">Activities</h1>
+                    </div>
+
+                    <div class="flex justify-center items-center mt-2 lg:mt-3">
+                        <div class="relative size-40">
+                            <!-- First SVG nested inside the first one -->
+                            <svg class="size-full" width="200" height="200" viewBox="0 0 36 36"
+                                xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+                                <!-- Background Circle -->
+                                <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-gray-200"
+                                    stroke-width="2"></circle>
+                                <!-- Progress Circle inside a group with rotation -->
+                                <g class="origin-center -rotate-90 transform">
+                                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-[#043B78]"
+                                        stroke-width="2" stroke-dasharray="100" stroke-dashoffset="75"></circle>
+                                </g>
+                            </svg>
+                            <!-- Second SVG nested inside the first one -->
+                            <svg class="size-full absolute" width="100" height="100" viewBox="0 0 36 36"
+                                xmlns="http://www.w3.org/2000/svg" style="top: 0px; left: 0px; padding: 14%;">
+                                <!-- Background Circle -->
+                                <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-gray-200"
+                                    stroke-width="2"></circle>
+                                <!-- Progress Circle inside a group with rotation -->
+                                <g class="origin-center -rotate-90 transform">
+                                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-[#F8D336]"
+                                        stroke-width="2" stroke-dasharray="100" stroke-dashoffset="50"></circle>
+                                </g>
+                            </svg>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-between items-center mt-2 lg:mt-2">
+                        <div>
+                            <div class="flex">
+                                <div class="rounded-full text-[#043B78] text-5xl">•</div>
+                                <div class="flex justify-center items-center mt-1">
+                                    <h2 class="font-bold text-black">75</h2>
+                                </div>
+                            </div>
+                            <h3 class="ml-2 xl:text-xs xl:text-[10px] font-bold text-black">Workshops Attended</h3>
+                        </div>
+                        <div>
+                            <div class="flex">
+                                <div class="rounded-full text-[#F8D336] text-5xl">•</div>
+                                <div class="flex justify-center items-center mt-1">
+                                    <h2 class="font-bold text-black">50</h2>
+                                </div>
+                            </div>
+                            <h3 class="ml-2 xl:text-xs xl:text-[10px] font-bold text-black">Webinars Attended</h3>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="bg-[#EEEEEE] rounded-3xl p-5 col-span-4 h-96 md:h-80">
+                    <div>
+                        <h1 class="flex justify-center text-2xl md:text-xl font-semibold text-black">Achievements</h1>
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <div class="w-80">
+                            <div id="default-carousel" class="relative mb-4 mt-4" data-carousel="static">
+                                <!-- Carousel wrapper -->
+                                <div class="overflow-hidden relative h-72 md:h-64 rounded-lg">
+                                    <!-- Item 1 -->
+                                    <div class="hidden duration-700 ease-in-out bg-[#EEEEEE]" data-carousel-item>
+                                        <div>
+                                            <div class="flex justify-center items-center">
+                                                <img src="./src/assets/img/acheivement-circle-03.png" class="">
+                                            </div>
+                                            <div class="">
+                                                <h3
+                                                    class="text-xl md:text-lg text-black font-medium text-center lg:mt-3 lg:px-20">
+                                                    Best
+                                                    in member class
+                                                    this month</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Item 2 -->
+                                    <div class="hidden duration-700 ease-in-out bg-[#EEEEEE]" data-carousel-item>
+                                        <div>
+                                            <div class="flex justify-center items-center">
+                                                <img src="./src/assets/img/acheivement-circle-02.png" class="">
+                                            </div>
+                                            <div class="">
+                                                <h3
+                                                    class="text-xl md:text-lg text-black font-medium text-center lg:mt-3 lg:px-20">
+                                                    Best
+                                                    in member class
+                                                    this month</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Item 3 -->
+                                    <div class="hidden duration-700 ease-in-out bg-[#EEEEEE]" data-carousel-item>
+                                        <div>
+                                            <div class="flex justify-center items-center">
+                                                <img src="./src/assets/img/acheivement-circle.png" class="">
+                                            </div>
+                                            <div class="">
+                                                <h3
+                                                    class="text-xl md:text-lg text-black font-medium text-center lg:mt-3 lg:px-20">
+                                                    Best
+                                                    in member class
+                                                    this month</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Item 4-->
+
+                                </div>
+
+                                <!-- Slider indicators -->
+                                <!-- Slider controls -->
+                                <button type="button"
+                                    class="flex absolute top-0 left-0 z-20 justify-center items-center -px-5 h-full cursor-pointer group focus:outline-none lg:-mt-14"
+                                    data-carousel-prev>
+                                    <span
+                                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                        <svg class="w-5 h-5 text-black sm:w-6 sm:h-6" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 19l-7-7 7-7"></path>
+                                        </svg>
+                                        <span class="hidden">Previous</span>
+                                    </span>
+                                </button>
+                                <button type="button"
+                                    class="flex absolute top-0 right-0 z-20 justify-center items-center -px-5 h-full cursor-pointer group focus:outline-none lg:-mt-14"
+                                    data-carousel-next>
+                                    <span
+                                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                        <svg class="w-5 h-5 text-black sm:w-6 sm:h-6" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                        <span class="hidden">Next</span>
+                                    </span>
+                                </button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!---profile : end--->
+
+
+        <!----QR Code Pop-Up : Start--->
+        <div id="popup" class="fixed inset-0 flex justify-center items-center hidden z-30">
+            <div class="absolute w-full h-full flex justify-center items-center">
+                <div class="bg-white p-10 border rounded shadow-md relative">
+                    <img src="./src/assets/img/QR_code_og.svg" class="w-full h-full lg:w-96 lg:h-96 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 md:w-64 md:h-64 sm:w-48 sm:h-48">
+                    <button id="popup-close" class="mt-4 bg-gray-600 hover:bg-red-600 text-white px-4 py-2 rounded absolute right-10 top-5">X</button>
+                </div>
+            </div>
+        </div>
+        <!-----QR Code Pop-Up : End--->
+
+    </div>
+
+    <!--Mobile Responsive-->
+    <div class="lg:hidden block">
+
+        <h1>sivaraj Saminathan</h1>
+
+    </div>
+
+</body>
+
+<script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+
+<!--navbar-->
+<script>
+    // Gets the Mobile Nav icon by its ID
+    let bars = document.getElementById('bars');
+
+    // Gets the Mobile Nav container
+    let mobileMenu = document.getElementById('mobileMenu');
+
+    // Displays the Mobile Nav when clicked and changes the Nav Icon from three bars to an 'X'
+    bars.addEventListener('click', function () {
+        mobileMenu.classList.toggle('show');
+        bars.classList.toggle('fa-times');
+    });
+</script>
+
+<!--QR-Code-Pop-up-->
+<script>
+    const popupTrigger = document.getElementById('popup-trigger');
+    const popup = document.getElementById('popup');
+    const popupClose = document.getElementById('popup-close');
+
+    popupTrigger.addEventListener('click', () => {
+        popup.classList.remove('hidden');
+    });
+
+    popupClose.addEventListener('click', () => {
+        popup.classList.add('hidden');
+    });
+</script>
+
+
+</html>
